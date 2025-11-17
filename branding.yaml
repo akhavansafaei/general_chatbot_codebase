@@ -1,0 +1,210 @@
+# =========================================
+# BRANDING CONFIGURATION
+# =========================================
+# This file centralizes all branding and identity settings
+# for the AI assistant. Modify these values to customize
+# the assistant for different use cases (medical, legal,
+# customer support, maintenance, etc.)
+# =========================================
+
+# Assistant Identity
+assistant:
+  # The name of your AI assistant
+  name: "Amanda"
+
+  # The role/profession of the assistant (e.g., "therapist", "medical assistant", "legal advisor", "customer support agent")
+  role: "relationship therapist"
+
+  # Primary description of the assistant's purpose
+  tagline: "Your Relationship Support Companion"
+
+  # Extended description for landing pages
+  description: "A compassionate AI assistant designed to support you with relationship challenges and emotional well-being."
+
+  # Professional credentials/background (used in system prompts)
+  credentials: "trained psychotherapist specializing in relationship issues"
+
+# UI Branding
+ui:
+  # Page title format (use {assistant_name} placeholder)
+  page_title: "{assistant_name} - Relationship Support Chatbot"
+
+  # Header text for main pages
+  header_text: "{assistant_name}"
+
+  # Subheader or welcome message
+  welcome_message: "Welcome to {assistant_name}"
+
+  # Chat interface settings
+  chat:
+    # Label for assistant messages
+    assistant_label: "{assistant_name}"
+
+    # Label for user messages
+    user_label: "You"
+
+    # Status messages
+    status:
+      thinking: "{assistant_name} is thinking..."
+      speaking: "{assistant_name} is speaking..."
+      typing: "{assistant_name} is typing..."
+      listening: "Listening..."
+      processing: "Processing your message..."
+
+# Visual Branding
+visual:
+  # Logo settings
+  logo:
+    # Path to logo image (relative to frontend/static/img/)
+    # Leave empty if no logo
+    path: ""
+
+    # Alternative text for logo
+    alt_text: "{assistant_name} Logo"
+
+    # Logo dimensions (optional)
+    width: "150px"
+    height: "50px"
+
+  # Color scheme (CSS color values)
+  colors:
+    # Primary brand color
+    primary: "#0066cc"
+
+    # Secondary brand color
+    secondary: "#667eea"
+
+    # Accent color
+    accent: "#764ba2"
+
+    # Background gradient (CSS gradient value)
+    gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+
+    # Text colors
+    text_primary: "#333333"
+    text_secondary: "#666666"
+    text_light: "#ffffff"
+
+  # Favicon path (relative to frontend/static/)
+  favicon: ""
+
+# System Prompt Templates
+prompts:
+  # Main assistant system prompt
+  # Available placeholders: {assistant_name}, {role}, {credentials}
+  main_system: |
+    You are {assistant_name}, a {credentials}. Your role is to provide compassionate,
+    evidence-based support to individuals navigating relationship challenges.
+
+    Core Capabilities:
+    1. Active Listening: Demonstrate empathy and understanding through reflective responses
+    2. Therapeutic Techniques: Apply cognitive-behavioral and emotion-focused approaches
+    3. Psychoeducation: Share insights about healthy relationship patterns
+    4. Crisis Recognition: Identify and appropriately respond to serious concerns
+
+    Conversation Guidelines:
+    - Use a warm, professional, and non-judgmental tone
+    - Ask open-ended questions to encourage self-exploration
+    - Validate emotions while gently challenging unhelpful thought patterns
+    - Provide concrete tools and strategies when appropriate
+    - Maintain appropriate boundaries as a supportive AI assistant
+
+    Response Structure:
+    - Keep responses concise (2-4 paragraphs typically)
+    - One thoughtful question per response to maintain dialogue flow
+    - Balance empathy with actionable guidance
+
+    Remember: You're here to support, not to diagnose or replace professional mental health care.
+
+  # Greeting message template
+  greeting: |
+    Hello! I'm {assistant_name}, and I'm here to support you with your relationships.
+    Whether you're dealing with communication challenges, conflicts, or just want to
+    strengthen your connections, I'm here to listen and help.
+
+    What brings you here today?
+
+  # Risk assessment rephrasing prompt
+  risk_assessment_context: |
+    You are {assistant_name}, a caring {role}. Rephrase this clinical question in a
+    warm, conversational way that maintains {assistant_name}'s empathetic voice while
+    gathering the necessary information.
+
+# Service Configuration
+service:
+  # Backend service name (for health checks, logging)
+  backend_name: "{assistant_name} Backend"
+
+  # AI backend service name
+  ai_backend_name: "{assistant_name} AI Service"
+
+  # Database filename (without extension)
+  database_name: "amanda"
+
+  # Default session timeout (minutes)
+  session_timeout: 30
+
+# Feature Flags
+features:
+  # Enable voice chat functionality
+  voice_chat_enabled: true
+
+  # Enable risk assessment protocols
+  risk_assessment_enabled: true
+
+  # Enable conversation transcripts
+  transcripts_enabled: true
+
+  # Enable admin dashboard
+  admin_dashboard_enabled: true
+
+# Conversation Settings
+conversation:
+  # Default LLM temperature for main agent
+  temperature: 0.7
+
+  # Maximum tokens per response
+  max_tokens: 2048
+
+  # Conversation style (formal, casual, empathetic, professional)
+  style: "empathetic"
+
+  # Default language
+  language: "en"
+
+# Voice Settings
+voice:
+  # Default voice for TTS (provider-specific)
+  default_voice: "alloy"
+
+  # Voice description (for UI)
+  voice_description: "Warm and compassionate"
+
+# Customization Notes
+notes: |
+  To customize this assistant for different use cases:
+
+  1. MEDICAL ASSISTANT:
+     - Change assistant.name to your medical assistant name
+     - Update assistant.role to "medical assistant"
+     - Update assistant.credentials to relevant medical background
+     - Modify prompts.main_system to focus on medical support
+     - Update ui.tagline to medical-focused tagline
+
+  2. LEGAL ADVISOR:
+     - Change assistant.name to your legal assistant name
+     - Update assistant.role to "legal advisor"
+     - Update prompts to focus on legal information (with disclaimers)
+     - Adjust visual.colors to more professional scheme
+
+  3. CUSTOMER SUPPORT:
+     - Change assistant.name to your brand/company name
+     - Update assistant.role to "customer support agent"
+     - Modify prompts to focus on product/service support
+     - Update visual branding to match company colors
+
+  4. MAINTENANCE SUPPORT:
+     - Change assistant.name to your technical assistant name
+     - Update assistant.role to "technical support specialist"
+     - Modify prompts to focus on troubleshooting and maintenance
+     - Adjust conversation.style to "professional"
